@@ -5,6 +5,7 @@
 1. 打开 https://www.fumen-database.com/mypage
 2. 登录 → 右键 → **另存为 → 网页，全部** → 保存为 `マイページ.html`
 3. 打开本工具 → 选择文件 → 点击「开始生成」→ 生成 `scores.json`
+4. CTRL+A全选复制后粘贴到 “太鼓六维计算器（自动填分版）_12.05.html” 后获得rating
 
 ## 技术细节
 
