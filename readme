@@ -1,0 +1,22 @@
+# CYN 的铺面数据转换器 Pro v3.0
+
+## 使用方法
+
+1. 打开 https://www.fumen-database.com/mypage
+2. 登录 → 右键 → **另存为 → 网页，全部** → 保存为 `マイページ.html`
+3. 打开本工具 → 选择文件 → 点击「开始生成」→ 生成 `scores.json`
+
+## 技术细节
+
+- 基于 Python + tkinter + BeautifulSoup4
+- 使用 PyInstaller + Inno Setup + UPX 打包
+- 数字签名：已申请 EV Code Signing（审核中）
+
+## 致谢
+
+感谢所有使用和反馈的太鼓玩家！
+你的每一次同步，都是对 CYN 最大的支持！
+
+---
+
+**Made with ❤ by CYN**

@@ -9,11 +9,15 @@ from bs4 import BeautifulSoup
 class UltimateFumenExtractor:
     def __init__(self, root):
         self.root = root
-        self.root.title("CYN 的铺面数据转换器")
+        self.root.title("CYN 的铺面数据Getter")
         self.root.geometry("900x650")
         self.root.configure(bg="#0f0f1a")
         self.root.resizable(False, False)
-        self.root.iconbitmap(default="R.ico")  # 可选：放一个.ico图标同目录
+        # self.root.iconbitmap(default="R.ico")
+        try:
+            self.root.iconbitmap("R.ico")
+        except:
+            pass  # 找不到图标就用默认的，反正不影响运行
 
         # 居中
         self.root.update_idletasks()
@@ -39,23 +43,22 @@ class UltimateFumenExtractor:
         tk.Label(self.root, text="Save Score page as html from fumen-database",
                  font=("微软雅黑", 11), fg="#cccccc", bg="#0f0f1a").pack(pady=(0, 30))
 
-        # 文件选择区（美化版）
+        # 文件选择区
         file_frame = tk.Frame(self.root, bg="#1a1a2e", relief="flat", bd=2)
         file_frame.pack(pady=20, padx=80, fill="x")
 
         tk.Label(file_frame, text="Choose your マイページ.html", font=("微软雅黑", 12),
-                 fg="#00ffcc", bg="#1a1a2e").pack(anchor="w", padx=25, pady=(15, 5))
+                 fg="#ff3366", bg="#1a1a2e").pack(anchor="w", padx=25, pady=(15, 5))
 
         path_frame = tk.Frame(file_frame, bg="#1a1a2e")
         path_frame.pack(fill="x", padx=25, pady=(0, 15))
 
         tk.Entry(path_frame, textvariable=self.html_path, font=("Consolas", 11), bg="#16213e",
-                 fg="#00ffcc", relief="flat", state="readonly").pack(side="left", fill="x", expand=True)
+                 fg="#ff3366", relief="flat", state="readonly").pack(side="left", fill="x", expand=True)
         tk.Button(path_frame, text="浏览...", command=self.select_file,
                   bg="#ff3366", fg="white", font=("微软雅黑", 10, "bold"),
                   relief="flat", cursor="hand2").pack(side="right", padx=(10, 0))
 
-        # 操作按钮（超炫渐变风）
         btn = tk.Button(self.root, text="Start",
                         font=("微软雅黑", 16, "bold"), bg="#ff3366", fg="white",
                         relief="flat", height=2, cursor="hand2",
@@ -67,7 +70,7 @@ class UltimateFumenExtractor:
 
         # 状态显示区
         self.status = tk.Label(self.root, text="CYN IS WAITING...", font=("微软雅黑", 11),
-                               fg="#8888ff", bg="#0f0f1a", height=2)
+                               fg="#ff3366", bg="#0f0f1a", height=2)
         self.status.pack(pady=10)
 
         # 结果统计（转换后显示）
