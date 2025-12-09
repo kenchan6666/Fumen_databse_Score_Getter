@@ -177,3 +177,52 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = UltimateFumenExtractor(root)
     root.mainloop()
+
+
+    # hiroba 解析函数
+    # def extract_hiroba(self, soup):
+    #     result = []
+    #     # 查找所有 score_detail.php
+    #     for a in soup.find_all("a", href=re.compile(r"score_detail\.php")):
+    #         href = a["href"]
+    #         match = re.search(r"song_no=(\d+)&level=(\d+)", href)
+    #         if not match: continue
+    #         song_no = int(match.group(1))
+    #         level = int(match.group(2))
+    #         if level not in [4, 5]: continue
+    #
+    #         # 找到当前行
+    #         row = a.find_parent("tr")
+    #         if not row: continue
+    #         cols = row.find_all("td")
+    #         if len(cols) < 9: continue
+    #
+    #         try:
+    #             score_str = cols[3].get_text(strip=True).replace(",", "")
+    #             high_score = int(score_str) if score_str.isdigit() else 0
+    #
+    #             crown_img = cols[4].find("img")
+    #             rank = 4
+    #             if crown_img:
+    #                 src = crown_img["src"]
+    #                 if "gold" in src or "rainbow" in src: rank = 1
+    #                 elif "silver" in src: rank = 2
+    #                 elif "bronze" in src: rank = 3
+    #
+    #             good = int(cols[5].get_text(strip=True) or 0)
+    #             ok = int(cols[6].get_text(strip=True) or 0)
+    #             bad = int(cols[7].get_text(strip=True) or 0)
+    #             combo = int(cols[8].get_text(strip=True) or 0) or good
+    #
+    #             full_combo = 1 if bad == 0 and ok == 0 else 0
+    #             dondaful = 1 if full_combo and good == combo else 0
+    #
+    #             result.append([
+    #                 song_no, level, high_score, rank,
+    #                 good, ok, bad, good + ok + bad, combo,
+    #                 1, 1, full_combo, dondaful,
+    #                 datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    #             ])
+    #         except:
+    #             continue
+    #     return result
