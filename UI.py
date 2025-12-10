@@ -95,16 +95,16 @@ class FumenExtractorApp:
             save_path = filedialog.asksaveasfilename(
                 title="保存为 scores.json",
                 defaultextension=".json",
-                initialfile="scores.json"
+                initialfile="鼓众广场专用_scores.json"
             )
             if not save_path:
                 return
 
             Path(save_path).write_text(json.dumps(scores, ensure_ascii=False, indent=2), encoding="utf-8")
 
-            # self.status.config(text="转换完成！", fg="#3fb950")
-            # self.result_label.config(text=f"成功生成 {count} 条成绩！\n其中 {full} 首满分/Infinity")
-            messagebox.showinfo("完成", f"共 {len(scores)} 条成绩\n已保存到：{Path(save_path).name}\n现在直接复制到计算器即可！")
+            self.status.config(text="转换完成！", fg="#3fb950")
+            self.result_label.config(text=f"成功生成 {count} 条成绩！\n其中 {full} 首满分/Infinity")
+            messagebox.showinfo("大成功！", f"完美生成 {count} 条成绩！\n其中 {full} 首满分\n快去鼓众广场同步吧！")
 
         except Exception as e:
             messagebox.showerror("错误", f"转换失败：{str(e)}")
