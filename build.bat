@@ -20,7 +20,7 @@ pyinstaller --onefile ^
             --add-data="R.ico;." ^
             --name="CYN 的铺面数据Getter" ^
             --noconfirm ^
-            Score_Getter.py
+            main.py
 if not exist "dist\CYN 的铺面数据Getter.exe" (
     echo.
     echo [错误] 打包失败

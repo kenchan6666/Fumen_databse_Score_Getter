@@ -6,7 +6,7 @@ from pathlib import Path
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-class UltimateFumenExtractor:
+class FumenExtractor:
     def __init__(self, root):
         self.root = root
         self.root.title("CYN 的铺面数据Getter")
@@ -175,7 +175,7 @@ class UltimateFumenExtractor:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = UltimateFumenExtractor(root)
+    app = FumenExtractor(root)
     root.mainloop()
 
 
